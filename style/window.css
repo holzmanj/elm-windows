@@ -52,8 +52,12 @@
     width: calc(100% + var(--window-border-size) * 2 + var(--window-grip-thickness) * 2);
     height: calc(100% + var(--window-border-size) * 2 + var(--window-grip-thickness) * 2);
 
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     pointer-events: none;
+}
+
+.active-window .window-resize-grip-wrapper {
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
 }
 
 .window-resize-grip-n,
