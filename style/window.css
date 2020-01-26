@@ -1,0 +1,130 @@
+:root {
+    --window-border-size: 1px;
+    --window-grip-thickness: 5px;
+    --corner-grip-width: 25px;
+    --corner-grip-height: 25px;
+}
+
+.window-wrapper {
+    position: absolute;
+}
+
+.window {
+    position: absolute;
+    background-color: #e5e5e5;
+    overflow: hidden;
+
+    width: inherit;
+    height: inherit;
+
+    border: 1px solid grey;
+}
+
+.window > * {
+    z-index: inherit;
+}
+
+.window-title-bar {
+    cursor: move;
+    height: 20px;
+    min-width: 80px;
+    background-color: grey;
+    border-bottom: 1px solid silver;
+}
+
+.active-window .window-title-bar {
+    background-color: rgb(64, 40, 150);
+}
+
+.window-close-btn {
+    float: right;
+    color: white;
+    padding-right: 3px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.window-resize-grip-wrapper {
+    position: absolute;
+    top: calc(-1 * var(--window-grip-thickness));
+    left: calc(-1 * var(--window-grip-thickness));
+    
+    width: calc(100% + var(--window-border-size) * 2 + var(--window-grip-thickness) * 2);
+    height: calc(100% + var(--window-border-size) * 2 + var(--window-grip-thickness) * 2);
+
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
+.window-resize-grip-n,
+.window-resize-grip-s,
+.window-resize-grip-e,
+.window-resize-grip-w,
+.window-resize-grip-nw,
+.window-resize-grip-ne,
+.window-resize-grip-sw,
+.window-resize-grip-se {
+    pointer-events: all;
+    position: absolute;
+    background-color: silver;
+    border: 1px solid gray;
+    height: var(--corner-grip-height);
+    width: var(--corner-grip-width);
+    z-index: inherit;
+}
+
+.window-resize-grip-n {
+    top: 0px;
+    right: 50%;
+    transform: translate(50%, 0);
+    width: calc(100% - (var(--corner-grip-width) + var(--window-grip-thickness) * 2));
+    cursor: n-resize;
+}
+
+.window-resize-grip-s {
+    bottom: 0px;
+    right: 50%;
+    width: calc(100% - (var(--corner-grip-width) + var(--window-grip-thickness) * 2));
+    transform: translate(50%, 0);
+    cursor: s-resize;
+}
+
+.window-resize-grip-e {
+    right: 0px;
+    top: 50%;
+    height: calc(100% - (var(--corner-grip-height) + var(--window-grip-thickness) * 2));
+    transform: translate(0, -50%);
+    cursor: e-resize;
+}
+
+.window-resize-grip-w {
+    left: 0px;
+    top: 50%;
+    height: calc(100% - (var(--corner-grip-height) + var(--window-grip-thickness) * 2));
+    transform: translate(0, -50%);
+    cursor: w-resize;
+}
+
+.window-resize-grip-nw {
+    top: 0px;
+    left: 0px;
+    cursor: nw-resize;
+}
+
+.window-resize-grip-ne {
+    top: 0px;
+    right: 0px;
+    cursor: ne-resize;
+}
+
+.window-resize-grip-sw {
+    bottom: 0px;
+    left: 0px;
+    cursor: sw-resize;
+}
+
+.window-resize-grip-se {
+    bottom: 0px;
+    right: 0px;
+    cursor: se-resize;
+}

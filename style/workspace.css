@@ -1,0 +1,16 @@
+#workspace {
+    width: 100vw;
+    height: 100vh;
+}
+
+#application-dock {
+    height: 100%;
+    width: 60px;
+    background: silver;
+    border-right: 2px solid grey;
+}
+
+#window-group-wrapper {
+    width: 100%;
+    height: 100%;
+}
