@@ -77,6 +77,17 @@
     z-index: inherit;
 }
 
+.window-resize-grip-n:hover,
+.window-resize-grip-s:hover,
+.window-resize-grip-e:hover,
+.window-resize-grip-w:hover,
+.window-resize-grip-nw:hover,
+.window-resize-grip-ne:hover,
+.window-resize-grip-sw:hover,
+.window-resize-grip-se:hover {
+    background-color: rgb(172, 172, 172);
+}
+
 .window-resize-grip-n {
     top: 0px;
     right: 50%;
